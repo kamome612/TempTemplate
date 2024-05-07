@@ -35,14 +35,17 @@ public:
 	T x;
 	T y;
 	T GetX() { return (x); }
-	T Veclen(){return (sqrt(x*x+y*y)) }
+	T Length()const { return (sqrt(x * x + y * y)); }
+	bool operator>(const Vec2 &other)const
+	{
+		return  Length() > other.Length();
+	}
 	void SetX(T _x) { x = _x; }
 	void PrintVec() { cout << "(x,y) = (" << x << "," << y << ")" << endl; }//インライン定義
 };
 //ベクトルの長さをT型で返すメンバ関数を作る
 //ベクトルの長さで比較する>演算子をオーバーロード
 //ベクトルの長さを比べて長い方が表示して本当にあっているか確認(tMaxに入れる!)
-
 
 int main()
 {
@@ -63,14 +66,12 @@ int main()
 	//cout << "tMax 0.000062 1e-15 : " << res3 << endl;
 
 	Vec2<double>v1;
-	v1.x = 2.3;
-	v1.y = 3.5;
-	double vlen = v1.Veclen();
+	v1.x = 5.5;
+	v1.y = 1.4;
 	Vec2<double>v2;
-	v2.x = 5.5;
-	v2.y = 1.4;
-	double vlen = v1.Veclen();
-
+	v2.x = 2.3;
+	v2.y = 3.5;
+	cout << "ベクトルの長さが長い方 : " << tMax<double>(v1.Length(), v2.Length()) << endl;
 	return 0;
 }
 

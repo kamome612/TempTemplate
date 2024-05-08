@@ -72,7 +72,6 @@ int main()
 	v2.x = 2.3;
 	v2.y = 3.5;
 	Vec2<double> res = tMax(v1, v2);
-	cout << endl;
 	res.PrintVec();
 	cout << "ƒxƒNƒgƒ‹‚Ì’·‚³ : " << res.Length() << endl;
 	return 0;

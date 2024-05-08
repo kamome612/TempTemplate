@@ -71,7 +71,10 @@ int main()
 	Vec2<double>v2;
 	v2.x = 2.3;
 	v2.y = 3.5;
-	cout << "ベクトルの長さが長い方 : " << tMax(v1.Length(), v2.Length()) << endl;
+	Vec2<double> res = tMax(v1, v2);
+	cout << endl;
+	res.PrintVec();
+	cout << "ベクトルの長さ : " << res.Length() << endl;
 	return 0;
 }
 
